@@ -18,11 +18,15 @@ A2<-rbind.data.frame(A1,tt2[2,]) # combine A1 and tt2
 
 A3<-data.frame(0,0) # initialise df A3
 
-for (i in 1:1310) {
+xr<-nrow(A2)
 
-    if (A2[23,i] <= 0.05)
+xR<-xr-1
+
+for (i in 1:length(A2)) {
+
+    if (A2[xr,i] <= 0.05)
   
-       A3<- cbind(A3,A2[1:22,i, drop=FALSE])
+       A3<- cbind(A3,A2[1:xR,i, drop=FALSE])
 
     }
 
